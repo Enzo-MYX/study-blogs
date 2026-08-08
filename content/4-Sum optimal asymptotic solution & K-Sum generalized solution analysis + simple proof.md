@@ -27,17 +27,17 @@ Of course, there's still a lot to be improved in actual runtime, as smarter user
 # Complexity
 
 - Time complexity:  
-    O(n3)
+    $$O(n^3)$$
     
 - Space complexity:  
-    O(logn) for Arrays.sort (O(1) for in-place sorts like Selection Sort)  
-    O(K) for generalized K-sum problem
+    $$O(logn)$$ for Arrays.sort ($$O(1)$$ for in-place sorts like Selection Sort)  
+    $$O(K)$$ for generalized K-sum problem + the answer list
     
 
 # Generalization
 
 As demonstrated above, from running a K-Sum solver at most n times on a sorted array we obtain a solver for (K+1)-Sum problems. With a base case of K=2 being classic Two-Pointer solution, we get the generalized algorithm idea.  
-For K≥3, optimal time complexity is O(n^{K−1}), and optimal space complexity is O(1).
+For K≥3, optimal time complexity is $$O(n^{K−1})$$ (See [[Enumeration K-sum problem cost analysis + proof]]), and optimal space complexity is $$O(1)$$ (If you don't count the answer list, that is).
 
 # Code
 

@@ -4,6 +4,7 @@ During our discussions in the class Discord server, Professor Halim decided to a
 A day later, someone proposed the 'meet-in-middle' idea, claiming to have solved the 4-Sum problem in $$O(n^2logn)$$, and I was like "That's bullsh__, I proved the problem was $$\Omega(n^3)$$ didn't I?"
 ...Then they pulled out a bunch of research papers detailing the solutions.
 
+
 # What does this mean?
 ---
 So, for context, K-Sum problems have two variants, the 'decision' version and the 'enumeration' problem.
@@ -17,6 +18,7 @@ Like, chill prof, we're not even into the semester and you're already throwing u
 Anyhow, I only managed to solve the problem because LeetCode happened to use the 'enumeration variant'. But, I was still 100% correct in my proof (That enumeration K-Sum problems are $$Omega(n^{K-1})$$.
 
 So, let's see that proof now!
+
 
 # The Proof
 ---
@@ -38,6 +40,7 @@ Notice that $$L\sim \Theta (t^{K-1})$$ and the algorithm has to find and print a
 *(\*  You absorbed the section's proof.)*
 *(\*  ...Feels useful.)*
 
+
 # The proof (cont.)
 ---
 Well, we've stalled this out for as long as we can, time to finally tackle this head on.
@@ -47,6 +50,8 @@ Notice that if every element in the array increases/decreases by *m*, and the ta
 So, for every *t* where $$K | t$$, let $$t = K\cdot p$$, the aforementioned example array from 1 to *t* can have each element decreased by *p*, and we still have a way to methodically generate input arrays of length $$K\cdot t$$ and incur a cost of $$L\sim \Theta (t^{K-1})$$.
 
 Therefore, the enumeration K-Sum problem defintionally costs $$\Omega (n^{K-1})$$ where $$n$$ denotes the length of the input array.
+
+
 
 # $$\mathfrak{Quod\;erat\;demonstrandum}$$
 # Subscribe
