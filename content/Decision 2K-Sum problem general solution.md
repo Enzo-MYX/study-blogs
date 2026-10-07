@@ -53,4 +53,24 @@ a+b+c+d=11 is a really restrictive condition for unique positive integers. As an
 However, arr = [1, 2, 3, 4, 5, 6], sum1 = 4, sum2 = 7 is a configuration that the proposed solution really struggles with, precisely because the (2, 5) lands smack-dab in the middle of the sum = 7 pairs, yet it's necessary for the final answer.
 Keen-eyed readers may notice that the solution constructed **a whole extra frequency map during precomputations**, specifically to handle this type of case. It works, but just barely.
 
-Granted, in a vacuum, finding something like this would be complex, 
+Granted, in a vacuum, finding something like this would be complex, and I can't think of a cleaner approach to find the answer, but that got me thinking... *Why do we have to find this contrived pair of sums, anyway?*
+
+*...In fact, wouldn't we have found (1, 2, 3, 5) in the 3+8 case and be done with it?*
+
+# (The cooler) Solution
+---
+Introducing... the **"Anything Short Of Perfect Is Useless" Lemma**
+(Wow haha such a normal name and ideology to live by haha I'm not projecting what are you talking about)
+
+Notice that if $a \leq b \leq c \leq d$, then $a+b$ is (among) the smallest pairwise sums, and $c+d$ is (among) the largest pairwise sums. Therefore, ==if $a+b+c+d=target$, and we ran two pointer on the list of sums, we will have found the solution $(a, b, c, d)$ via the sums of $(a, b)$ & $(c, d)$==. Since we also sorted the index pairs via lexicographical order to break ties, we know that this idea holds, even with multiple indices pointing to the same value.
+
+So, the solution now becomes...(Drumroll please)
+
+##### Step 1: Sort the original array
+##### Step 2: Generate the $\frac{n \cdot (n - 1)}{2}$ index pairs (i, j), and sort by arr[i] + arr[j], break ties by i, then j.
+
+##### Step 3: Run the
+
+[Hm. It appears that there may be certain things I have not thought through. I will update this note once I do.]
+...Well, not exactly. I think I can still make it work by using a frequency array to help me cheat under 4-Sum without exceeding the $O(n^2logn)$ bound, but that's shameless and boring and not generalizeable so I won't take it.
+[The name of the author of the original solution has been redacted by their request.]
